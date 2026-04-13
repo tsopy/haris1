@@ -43,20 +43,40 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1.5rem 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
             transition: all 0.4s ease;
+            flex-wrap: wrap;
         }
-        nav.scrolled { background: rgba(10, 17, 40, 0.95); padding: 1rem 5%; box-shadow: 0 4px 20px rgba(0,0,0,0.5); backdrop-filter: blur(10px); }
+        nav.scrolled { background: rgba(10, 17, 40, 0.95); padding: 0.8rem 5%; box-shadow: 0 4px 20px rgba(0,0,0,0.5); backdrop-filter: blur(10px); }
         .logo { cursor: pointer; }
+        .logo img { height: 45px; }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links li a { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links li a { font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: color 0.3s; }
         .nav-links li a:hover { color: var(--accent); }
-        .nav-right { display: flex; align-items: center; gap: 1rem; }
-        .cta-btn { background: var(--accent); color: var(--primary); padding: 0.8rem 1.5rem; border-radius: 2px; font-weight: 700; text-transform: uppercase; transition: all 0.3s; border: 1px solid var(--accent); }
+        
+        /* Navbar right section - flex column on mobile */
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .cta-btn { 
+            background: var(--accent); 
+            color: var(--primary); 
+            padding: 0.6rem 1.2rem; 
+            border-radius: 2px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            transition: all 0.3s; 
+            border: 1px solid var(--accent);
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
         .cta-btn:hover { background: transparent; color: var(--accent); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
         
         /* Language Switcher - 4 languages */
@@ -99,54 +119,54 @@
         }
         header::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(10, 17, 40, 0.2) 0%, rgba(10, 17, 40, 0.9) 100%); z-index: 1; }
         .hero-content { position: relative; z-index: 2; text-align: center; max-width: 900px; padding: 0 20px; }
-        .hero-title { font-size: 5rem; font-weight: 700; letter-spacing: 6px; margin-bottom: 1rem; text-transform: uppercase; color: #fff; text-shadow: 2px 4px 15px rgba(0,0,0,0.6); animation: fadeInDown 1.5s ease-out; }
-        .hero-subtitle { font-size: 1.5rem; font-weight: 300; letter-spacing: 3px; margin-bottom: 2.5rem; color: var(--accent); animation: fadeInUp 1.5s ease-out 0.5s both; }
-        .hero-btn { display: inline-block; background: rgba(255,255,255,0.05); backdrop-filter: blur(5px); color: #fff; border: 1px solid var(--accent); padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; border-radius: 2px; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .hero-title { font-size: 4rem; font-weight: 700; letter-spacing: 6px; margin-bottom: 1rem; text-transform: uppercase; color: #fff; text-shadow: 2px 4px 15px rgba(0,0,0,0.6); animation: fadeInDown 1.5s ease-out; }
+        .hero-subtitle { font-size: 1.2rem; font-weight: 300; letter-spacing: 3px; margin-bottom: 2rem; color: var(--accent); animation: fadeInUp 1.5s ease-out 0.5s both; }
+        .hero-btn { display: inline-block; background: rgba(255,255,255,0.05); backdrop-filter: blur(5px); color: #fff; border: 1px solid var(--accent); padding: 0.8rem 2rem; font-size: 1rem; font-weight: 600; text-transform: uppercase; border-radius: 2px; transition: all 0.4s ease; position: relative; overflow: hidden; }
         .hero-btn:hover { color: var(--primary); border-color: var(--accent); box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
         .hero-btn::before { content: ''; position: absolute; top: 0; left: 0; width: 0%; height: 100%; background: var(--accent); transition: all 0.4s ease; z-index: -1; }
         .hero-btn:hover::before { width: 100%; }
         .scroll-down { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; color: var(--accent); font-size: 1.5rem; animation: bounce 2s infinite; }
 
-        .features { padding: 8rem 5%; background: var(--bg-dark); }
-        .section-header { text-align: center; margin-bottom: 5rem; opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+        .features { padding: 6rem 5%; background: var(--bg-dark); }
+        .section-header { text-align: center; margin-bottom: 4rem; opacity: 0; transform: translateY(30px); transition: all 1s ease; }
         .section-header.visible { opacity: 1; transform: translateY(0); }
-        .section-title { font-size: 3.5rem; color: var(--accent); margin-bottom: 1rem; }
-        .section-subtitle { font-size: 1.2rem; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto; }
-        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        .feature-text { padding: 2rem; opacity: 0; transform: translateX(-50px); transition: all 1s ease 0.3s; }
+        .section-title { font-size: 2.8rem; color: var(--accent); margin-bottom: 1rem; }
+        .section-subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto; }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .feature-text { padding: 1.5rem; opacity: 0; transform: translateX(-50px); transition: all 1s ease 0.3s; }
         .feature-text.visible { opacity: 1; transform: translateX(0); }
-        .feature-text h3 { font-size: 2.2rem; margin-bottom: 1.5rem; }
-        .feature-list { list-style: none; margin-top: 2rem; }
-        .feature-list li { margin-bottom: 1.2rem; font-size: 1.1rem; display: flex; align-items: center; }
-        .feature-list li::before { content: '♦'; color: var(--accent); margin-right: 15px; font-size: 1.2rem; }
+        .feature-text h3 { font-size: 1.8rem; margin-bottom: 1.2rem; }
+        .feature-list { list-style: none; margin-top: 1.5rem; }
+        .feature-list li { margin-bottom: 1rem; font-size: 1rem; display: flex; align-items: center; }
+        .feature-list li::before { content: '♦'; color: var(--accent); margin-right: 12px; font-size: 1rem; }
         .feature-img { border-radius: 4px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.6); opacity: 0; transform: translateX(50px); transition: all 1s ease 0.6s; }
         .feature-img.visible { opacity: 1; transform: translateX(0); }
         .feature-img img { width: 100%; height: auto; display: block; transition: transform 1.5s ease; }
         .feature-img:hover img { transform: scale(1.05); }
 
-        .banner { height: 60vh; background: url("images/slideshow1.jpg") center/cover no-repeat fixed; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; }
+        .banner { height: 50vh; background: url("images/slideshow1.jpg") center/cover no-repeat fixed; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; }
         .banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 17, 40, 0.6); }
         .banner-content { position: relative; z-index: 1; opacity: 0; transform: scale(0.9); transition: all 1s ease; }
         .banner-content.visible { opacity: 1; transform: scale(1); }
-        .banner-content h2 { font-size: 3.5rem; color: #fff; margin-bottom: 1rem; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-        .banner-content p { font-size: 1.5rem; color: var(--accent); font-style: italic; }
+        .banner-content h2 { font-size: 2.5rem; color: #fff; margin-bottom: 1rem; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        .banner-content p { font-size: 1.2rem; color: var(--accent); font-style: italic; }
 
-        .booking-container { padding: 5rem 5%; background: var(--bg-dark); display: flex; justify-content: center; }
-        .booking-box { background: rgba(255,255,255,0.03); border: 1px solid var(--accent); padding: 2rem 1.5rem; border-radius: 5px; width: 100%; max-width: 800px; backdrop-filter: blur(10px); }
-        .booking-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .booking-container { padding: 4rem 5%; background: var(--bg-dark); display: flex; justify-content: center; }
+        .booking-box { background: rgba(255,255,255,0.03); border: 1px solid var(--accent); padding: 1.5rem; border-radius: 5px; width: 100%; max-width: 800px; backdrop-filter: blur(10px); }
+        .booking-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
         .form-group { display: flex; flex-direction: column; }
-        .form-group label { color: var(--accent); margin-bottom: 8px; font-size: 0.8rem; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; }
+        .form-group label { color: var(--accent); margin-bottom: 6px; font-size: 0.7rem; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; }
         
         .form-group input, 
         .form-group select, 
         .form-group textarea { 
             background: rgba(255,255,255,0.1); 
             border: 1px solid rgba(212, 175, 55, 0.3); 
-            padding: 14px 12px; 
+            padding: 12px 10px; 
             color: white; 
             outline: none; 
             font-family: 'Montserrat', sans-serif; 
-            font-size: 16px; 
+            font-size: 14px; 
             transition: border-color 0.3s; 
             border-radius: 4px; 
             width: 100%; 
@@ -165,40 +185,95 @@
         }
         
         .full-width { grid-column: span 2; }
-        .booking-submit { grid-column: span 2; background: var(--accent); color: var(--primary); padding: 1rem; border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; margin-top: 10px; font-size: 1rem; border-radius: 4px; }
+        .booking-submit { grid-column: span 2; background: var(--accent); color: var(--primary); padding: 0.8rem; border: none; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: all 0.3s; margin-top: 10px; font-size: 0.9rem; border-radius: 4px; }
         .booking-submit:hover { background: #fff; box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
 
-        .whatsapp-float { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: var(--whatsapp); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2000; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: all 0.3s ease; border: none; font-size: 2rem; color: white; }
-        .ai-concierge-btn { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2000; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: all 0.3s ease; border: none; font-size: 1.5rem; }
-        .ai-chat-window { position: fixed; bottom: 100px; right: 30px; width: 320px; background: var(--bg-dark); border: 1px solid var(--accent); border-radius: 12px; z-index: 2000; display: none; flex-direction: column; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6); animation: fadeInUp 0.4s ease; }
-        .ai-chat-header { background: var(--accent); color: var(--primary); padding: 1rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
-        .ai-chat-body { padding: 1.5rem; font-size: 0.9rem; line-height: 1.6; }
+        .whatsapp-float { position: fixed; bottom: 20px; left: 20px; width: 50px; height: 50px; background: var(--whatsapp); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2000; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: all 0.3s ease; border: none; font-size: 1.8rem; color: white; }
+        .ai-concierge-btn { position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2000; box-shadow: 0 10px 25px rgba(0,0,0,0.3); transition: all 0.3s ease; border: none; font-size: 1.3rem; }
+        .ai-chat-window { position: fixed; bottom: 80px; right: 20px; width: 300px; background: var(--bg-dark); border: 1px solid var(--accent); border-radius: 12px; z-index: 2000; display: none; flex-direction: column; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6); animation: fadeInUp 0.4s ease; }
+        .ai-chat-header { background: var(--accent); color: var(--primary); padding: 0.8rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+        .ai-chat-body { padding: 1rem; font-size: 0.8rem; line-height: 1.5; }
         .ai-close { cursor: pointer; font-size: 1.2rem; }
 
-        footer { background: var(--primary); padding: 5rem 5% 2rem; text-align: center; border-top: 1px solid rgba(212, 175, 55, 0.3); }
-        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--accent); margin-bottom: 2rem; letter-spacing: 2px; }
-        .contact-info { display: flex; justify-content: center; gap: 4rem; margin-bottom: 4rem; flex-wrap: wrap; }
+        footer { background: var(--primary); padding: 3rem 5% 1.5rem; text-align: center; border-top: 1px solid rgba(212, 175, 55, 0.3); }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--accent); margin-bottom: 1.5rem; letter-spacing: 2px; }
+        .contact-info { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
         .contact-item { display: flex; flex-direction: column; align-items: center; }
-        .contact-item span:first-child { color: var(--accent); margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
-        .copyright { color: rgba(255,255,255,0.4); font-size: 0.9rem; margin-top: 2rem; }
+        .contact-item span:first-child { color: var(--accent); margin-bottom: 5px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 600; }
+        .contact-item span:last-child { font-size: 0.9rem; }
+        .copyright { color: rgba(255,255,255,0.4); font-size: 0.7rem; margin-top: 1.5rem; }
 
         @keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes bounce { 0%,20%,50%,80%,100% { transform: translateY(0) translateX(-50%); } 40% { transform: translateY(-15px) translateX(-50%); } 60% { transform: translateY(-7px) translateX(-50%); } }
 
+        /* ========== RESPONSIVE FOR MOBILE ========== */
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 0.9rem; }
+            nav {
+                flex-direction: column;
+                padding: 0.8rem 5%;
+            }
+            .logo { margin-bottom: 0.5rem; }
+            .logo img { height: 40px; }
+            .nav-links { 
+                display: flex; 
+                gap: 1rem; 
+                margin: 0.5rem 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links li a { font-size: 0.7rem; }
+            
+            .nav-right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+            .cta-btn { 
+                padding: 0.4rem 1rem; 
+                font-size: 0.7rem;
+                width: auto;
+            }
+            .lang-switcher {
+                justify-content: center;
+            }
+            .lang-btn { padding: 4px 8px; font-size: 0.65rem; }
+            
+            .hero-title { font-size: 2.2rem; letter-spacing: 3px; }
+            .hero-subtitle { font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 1.5rem; }
+            .hero-btn { padding: 0.6rem 1.5rem; font-size: 0.8rem; }
+            
             .section-title { font-size: 2rem; }
-            .feature-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
-            .booking-form { grid-template-columns: 1fr; }
+            .section-subtitle { font-size: 0.9rem; }
+            .feature-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .feature-text h3 { font-size: 1.5rem; }
+            .feature-text p { font-size: 0.9rem; }
+            .feature-list li { font-size: 0.9rem; }
+            
+            .banner-content h2 { font-size: 1.8rem; }
+            .banner-content p { font-size: 1rem; }
+            
+            .booking-container { padding: 3rem 4%; }
+            .booking-box { padding: 1rem; }
+            .booking-form { grid-template-columns: 1fr; gap: 1rem; }
             .full-width { grid-column: span 1; }
-            .ai-chat-window { width: calc(100% - 40px); right: 20px; left: 20px; }
-            .whatsapp-float { width: 50px; height: 50px; font-size: 1.5rem; }
-            .ai-concierge-btn { width: 50px; height: 50px; font-size: 1.2rem; }
-            .lang-btn { padding: 3px 6px; font-size: 0.6rem; }
-            .lang-switcher { gap: 2px; }
+            .form-group input, .form-group select, .form-group textarea { padding: 10px; font-size: 14px; }
+            .booking-submit { padding: 12px; font-size: 0.85rem; }
+            
+            .ai-chat-window { width: calc(100% - 40px); right: 20px; left: 20px; bottom: 80px; }
+            
+            .contact-info { gap: 1rem; }
+            .contact-item span:last-child { font-size: 0.75rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title { font-size: 1.8rem; }
+            .nav-links { gap: 0.8rem; }
+            .nav-links li a { font-size: 0.6rem; }
+            .lang-btn { padding: 3px 6px; font-size: 0.55rem; }
         }
     </style>
 </head>
@@ -207,7 +282,7 @@
     <nav id="navbar">
         <div class="logo">
             <a href="#home">
-                <img src="images/tsopelas logo skafos99.png" alt="Logo" style="height: 50px;">
+                <img src="images/tsopelas logo skafos99.png" alt="Logo">
             </a>
         </div>
         <ul class="nav-links">
@@ -257,9 +332,9 @@
                 <img src="images/DSC00020-999.jpg" alt="Interior" style="margin-bottom: 10px;">
                 <img src="images/media__Themisiv.jpg" alt="Deck">
             </div>
-            <div style="text-align: center; margin-top: 50px;">
+            <div style="text-align: center; margin-top: 40px;">
                 <a href="https://www.flickr.com/photos/185928919@N08/albums/72157712210256673" target="_blank" 
-                   style="display: inline-flex; align-items: center; gap: 10px; padding: 1.2rem 3rem; border: 2px solid var(--accent); color: var(--accent); text-transform: uppercase; font-weight: 700; border-radius: 4px;">
+                   style="display: inline-flex; align-items: center; gap: 8px; padding: 0.8rem 2rem; border: 2px solid var(--accent); color: var(--accent); text-transform: uppercase; font-weight: 700; border-radius: 4px; font-size: 0.8rem;">
                     <span>📷</span> <span data-key="gallery_btn">View Photo Gallery</span>
                 </a>
             </div>
@@ -278,29 +353,29 @@
             <h2 class="section-title" data-key="experiences_title">Exclusive Yachting Experiences</h2>
             <p class="section-subtitle" data-key="experiences_subtitle">Discover the hidden gems of Greece with THEMIS IV.</p>
         </div>
-        <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            <div class="feature-text fade-element" style="background-image: linear-gradient(rgba(10,17,40,0.75), rgba(10,17,40,0.75)), url('images/sporades-bg.jpg'); background-size: cover; background-position: center; padding: 2rem; border-radius: 10px;">
-                <h3 style="font-size: 1.5rem; color: var(--accent);" data-key="exp1_title">Sporades Islands</h3>
-                <p data-key="exp1_desc">A full-day excursion to the Marine Park. Swim in turquoise waters, explore Blue Caves.</p>
-                <ul class="feature-list" style="font-size: 0.9rem;">
+        <div class="feature-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="feature-text fade-element" style="background-image: linear-gradient(rgba(10,17,40,0.75), rgba(10,17,40,0.75)), url('images/sporades-bg.jpg'); background-size: cover; background-position: center; padding: 1.5rem; border-radius: 10px;">
+                <h3 style="font-size: 1.3rem; color: var(--accent);" data-key="exp1_title">Sporades Islands</h3>
+                <p style="font-size: 0.85rem;" data-key="exp1_desc">A full-day excursion to the Marine Park. Swim in turquoise waters, explore Blue Caves.</p>
+                <ul class="feature-list" style="font-size: 0.8rem; margin-top: 1rem;">
                     <li data-key="exp1_list1">Departure from Skiathos or Volos</li>
                     <li data-key="exp1_list2">Visit Tsougria & Lalaria beach</li>
                     <li data-key="exp1_list3">Snorkeling in secluded bays</li>
                 </ul>
             </div>
-            <div class="feature-text fade-element" style="background-image: linear-gradient(rgba(10,17,40,0.75), rgba(10,17,40,0.75)), url('images/trikeri-bg.jpg'); background-size: cover; background-position: center; padding: 2rem; border-radius: 10px;">
-                <h3 style="font-size: 1.5rem; color: var(--accent);" data-key="exp2_title">Pagasetic Gulf - Trikeri</h3>
-                <p data-key="exp2_desc">Experience absolute serenity. A journey to the car-free island of Trikeri.</p>
-                <ul class="feature-list" style="font-size: 0.9rem;">
+            <div class="feature-text fade-element" style="background-image: linear-gradient(rgba(10,17,40,0.75), rgba(10,17,40,0.75)), url('images/trikeri-bg.jpg'); background-size: cover; background-position: center; padding: 1.5rem; border-radius: 10px;">
+                <h3 style="font-size: 1.3rem; color: var(--accent);" data-key="exp2_title">Pagasetic Gulf - Trikeri</h3>
+                <p style="font-size: 0.85rem;" data-key="exp2_desc">Experience absolute serenity. A journey to the car-free island of Trikeri.</p>
+                <ul class="feature-list" style="font-size: 0.8rem; margin-top: 1rem;">
                     <li data-key="exp2_list1">Views of South Pelion</li>
                     <li data-key="exp2_list2">Seafood lunch at Trikeri Island</li>
                     <li data-key="exp2_list3">Hidden beaches only accessible by boat</li>
                 </ul>
             </div>
-            <div class="feature-text fade-element" style="background-image: linear-gradient(rgba(10,17,40,0.75), rgba(10,17,40,0.75)), url('images/alonissos-bg.jpg'); background-size: cover; background-position: center; padding: 2rem; border-radius: 10px;">
-                <h3 style="font-size: 1.5rem; color: var(--accent);" data-key="exp3_title">Boutique Cruises - Alonissos</h3>
-                <p data-key="exp3_desc">Tailor-made multi-day cruises offering absolute privacy.</p>
-                <ul class="feature-list" style="font-size: 0.9rem;">
+            <div class="feature-text fade-element" style="background-image: linear-gradient(rgba(10,17,40,0.75), rgba(10,17,40,0.75)), url('images/alonissos-bg.jpg'); background-size: cover; background-position: center; padding: 1.5rem; border-radius: 10px;">
+                <h3 style="font-size: 1.3rem; color: var(--accent);" data-key="exp3_title">Boutique Cruises - Alonissos</h3>
+                <p style="font-size: 0.85rem;" data-key="exp3_desc">Tailor-made multi-day cruises offering absolute privacy.</p>
+                <ul class="feature-list" style="font-size: 0.8rem; margin-top: 1rem;">
                     <li data-key="exp3_list1">Customized daily itinerary</li>
                     <li data-key="exp3_list2">Professional Crew & Captain</li>
                     <li data-key="exp3_list3">Premium catering on board</li>
@@ -311,7 +386,7 @@
 
     <section class="booking-container" id="contact">
         <div class="booking-box fade-element">
-            <h2 class="section-title" style="font-size: 2.5rem; text-align: center; margin-bottom: 2rem;" data-key="form_title">Charter Inquiry</h2>
+            <h2 class="section-title" style="font-size: 2rem; text-align: center; margin-bottom: 1.5rem;" data-key="form_title">Charter Inquiry</h2>
             <form class="booking-form" id="charterForm">
                 <div class="form-group">
                     <label data-key="form_name">Full Name *</label>
@@ -345,7 +420,7 @@
                 </div>
                 <div class="form-group full-width">
                     <label data-key="form_message">Message / Special Requests *</label>
-                    <textarea name="message" rows="4" placeholder="Catering, itinerary preferences, etc..." required></textarea>
+                    <textarea name="message" rows="3" placeholder="Catering, itinerary preferences, etc..." required></textarea>
                 </div>
                 <button type="submit" class="booking-submit" data-key="form_submit">Submit Inquiry</button>
             </form>
